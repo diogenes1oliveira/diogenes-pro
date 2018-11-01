@@ -8,3 +8,4 @@ jspm_packages
 # Terraform files
 .terraform
 *.tfstate
+*.tfstate.backup
