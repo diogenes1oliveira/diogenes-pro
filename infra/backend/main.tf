@@ -1,10 +1,9 @@
-
 provider "aws" {
   region = "${var.region}"
 }
 
 resource "aws_s3_bucket" "state-bucket" {
-  bucket = "terraform-state-${var.project-name}"
+  bucket = "${var.state-bucket}"
 
   versioning {
     enabled = true
@@ -15,17 +14,18 @@ resource "aws_s3_bucket" "state-bucket" {
   }
 
   tags {
-    Name = "state-bucket"
+    Name = "${var.state-bucket}"
     Category = "backend"
+    Project = "${var.project-name}"
     Description = "${var.project-name} - Terraform state"
   }
 }
 
 resource "aws_dynamodb_table" "state-lock-table" {
-  name = "terraform-state-lock-${var.project-name}"
+  name = "${var.state-lock-table}"
   hash_key = "LockID"
-  read_capacity = 20
-  write_capacity = 20
+  read_capacity = 1
+  write_capacity = 1
 
   attribute {
     name = "LockID"
@@ -39,6 +39,7 @@ resource "aws_dynamodb_table" "state-lock-table" {
   tags {
     Name = "state-lock-table"
     Category = "backend"
+    Project = "${var.project-name}"
     Description = "${var.project-name} - Terraform state lock"
   }
 }
