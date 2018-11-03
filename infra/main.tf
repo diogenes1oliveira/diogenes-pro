@@ -11,3 +11,10 @@ terraform {
 provider "aws" {
   region = "${var.region}"
 }
+
+module "network" {
+  source = "./network"
+
+  project-name = "diogenes-pro"
+  region = "us-east-2"
+}
