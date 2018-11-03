@@ -1,8 +1,8 @@
 
-variable "project_name" {
+variable "project-name" {
   type = "string"
 }
 
 variable "region" {
-  default = "us-east-2" # São
+  default = "us-east-2" # São Paulo
 }

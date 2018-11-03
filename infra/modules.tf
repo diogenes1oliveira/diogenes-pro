@@ -1,5 +1,5 @@
 module "backend" {
   source = "./backend"
 
-  project_name = "diogenes-pro"
+  project-name = "diogenes-pro"
 }
