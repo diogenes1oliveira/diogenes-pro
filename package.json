@@ -1,0 +1,22 @@
+{
+  "name": "diogenes-pro",
+  "version": "0.0.1",
+  "description": "Diógenes Oliveira' personal website",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogenes1oliveira/diogenes-pro.git"
+  },
+  "keywords": [
+    "development"
+  ],
+  "author": "Diógenes Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diogenes1oliveira/diogenes-pro/issues"
+  },
+  "homepage": "https://github.com/diogenes1oliveira/diogenes-pro#readme"
+}
