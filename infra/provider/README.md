@@ -1,4 +1,4 @@
-# backend
+# provider
 
 ### Files for Terraform's remote state management
 
@@ -15,7 +15,7 @@ this module shouldn't be imported into your main project. Instead, create the
 resources directly from this directory such as shown below:
 
 ```bash
-cd infra/backend
+cd infra/provider
 vi variables.tf # set up your project-specific resource names
 terraform apply
 ```
