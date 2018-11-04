@@ -36,3 +36,19 @@ resource "aws_route_table_association" "public-subnet-route-table-associations" 
   subnet_id = "${element(aws_subnet.public-subnets.*.id, count.index)}"
   route_table_id = "${element(aws_route_table.public-subnets-route-tables.*.id, count.index)}"
 }
+
+resource "aws_route" "public-subnets-ipv4-route-to-ig" {
+  count = "${length(var.vpc-public-subnets)}"
+
+  route_table_id = "${element(aws_route_table.public-subnets-route-tables.*.id, count.index)}"
+  gateway_id = "${aws_internet_gateway.vpc-main-ig.id}"
+  destination_cidr_block = "0.0.0.0/0"
+}
+
+resource "aws_route" "public-subnets-ipv6-route-to-ig" {
+  count = "${length(var.vpc-public-subnets)}"
+
+  route_table_id = "${element(aws_route_table.public-subnets-route-tables.*.id, count.index)}"
+  gateway_id = "${aws_internet_gateway.vpc-main-ig.id}"
+  destination_ipv6_cidr_block = "::/0"
+}

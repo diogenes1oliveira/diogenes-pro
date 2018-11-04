@@ -26,3 +26,7 @@ resource "aws_internet_gateway" "vpc-main-ig" {
     Description = "Internet gateway for the project ${var.project-name}"
   }
 }
+
+resource "aws_egress_only_internet_gateway" "vpc-main-egress-only-ig" {
+  vpc_id = "${aws_vpc.vpc-main.id}"
+}
