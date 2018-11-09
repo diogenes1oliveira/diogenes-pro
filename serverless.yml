@@ -4,14 +4,5 @@ provider:
   name: aws
   runtime: nodejs8.10
 
-package:
-  include:
-    - handler.js
-  exclude:
-    - "**/*"
-
-functions:
-  hello:
-    handler: handler.hello
-    events:
-      - http: GET hello
+plugins:
+  - serverless-s3-sync

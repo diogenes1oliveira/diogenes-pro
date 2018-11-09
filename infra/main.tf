@@ -18,3 +18,12 @@ module "network" {
   project-name = "diogenes-pro"
   region = "us-east-2"
 }
+
+
+module "static" {
+  source = "./static"
+
+  project-name = "diogenes-pro"
+  region = "us-east-2"
+  domain = "diogenes.pro"
+}
