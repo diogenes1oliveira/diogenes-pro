@@ -15,13 +15,14 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {sourceMap: true},
         },
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
-          {loader: 'style-loader'},
+          {loader: 'style-loader', options: {sourceMap: true}},
           {loader: 'css-loader'},
         ],
       },
