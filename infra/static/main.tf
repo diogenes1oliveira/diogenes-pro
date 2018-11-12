@@ -21,7 +21,7 @@ resource "aws_s3_bucket" "static-files-bucket" {
 
   cors_rule {
     allowed_headers = ["*"]
-    allowed_methods = ["OPTIONS", "GET"]
+    allowed_methods = ["GET"]
     allowed_origins = ["https://diogenes.pro"]
     expose_headers = ["ETag"]
   }

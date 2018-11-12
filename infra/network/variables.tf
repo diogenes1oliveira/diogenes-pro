@@ -40,6 +40,11 @@ variable "vpc-private-subnets" {
   ]
 }
 
+variable "vpc-nats" {
+  description = "Include a NAT gateway in the private subnets"
+  default = 0
+}
+
 variable "allowed-vpc-inbound-icmp-traffic" {
   description = "Allowed inbound ICMP traffic in the VPC"
   default = [

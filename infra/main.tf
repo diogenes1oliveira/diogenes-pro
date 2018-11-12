@@ -17,6 +17,7 @@ module "network" {
 
   project-name = "diogenes-pro"
   region = "us-east-2"
+  vpc-nats = 2
 }
 
 
