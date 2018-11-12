@@ -2,17 +2,12 @@ import { createGlobalStyle } from 'styled-components';
 
 import flumeBackground from './images/bg/flumes-in-switzerland-blurred.jpg';
 
-export const sizes = {
-  desktop: 992,
-  tablet: 768,
-  phone: 576,
-};
-
 const theme = {
   bgColor: "#05060b",
   bgImage: flumeBackground,
   primaryColor: "#102234",
-  secondaryColor: "#A7793C"
+  secondaryColor: "#A7793C",
+  overlayColor: "rgba(0, 0, 0, 0.5)",
 };
 
 export const BodyStyler = createGlobalStyle`

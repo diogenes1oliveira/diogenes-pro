@@ -37,11 +37,16 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.wasm', '.mjs', '.json'],
+    alias: {
+      Components: path.resolve(__dirname, 'src/components'),
+      Images: path.resolve(__dirname, 'src/images'),
+    },
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
+      favicon: './src/icons/favicon.ico',
       template: './public/index.html',
     }),
   ]
