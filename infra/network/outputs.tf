@@ -29,3 +29,11 @@ output "private-subnets" {
 output "default-sg" {
   value = "${aws_security_group.default-sg.id}"
 }
+
+output "bastion-sg" {
+  value = "${aws_security_group.bastion-sg.id}"
+}
+
+output "bastion-ips" {
+  value = ["${aws_instance.bastion-hosts.*.public_ip}"]
+}

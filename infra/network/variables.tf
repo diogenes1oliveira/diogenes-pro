@@ -45,6 +45,16 @@ variable "vpc-nats" {
   default = 0
 }
 
+variable "bastion-hosts" {
+  description = "Number of bastion hosts to instantiate"
+  default = 0
+}
+
+variable "bastion-ssh-key" {
+  description = "Content of the SSH public key"
+  default = ""
+}
+
 variable "allowed-vpc-inbound-icmp-traffic" {
   description = "Allowed inbound ICMP traffic in the VPC"
   default = [
