@@ -55,3 +55,28 @@ resource "aws_security_group_rule" "vpc-https-outbound-traffic" {
   protocol = "tcp"
   cidr_blocks = ["0.0.0.0/0"]
 }
+
+resource "aws_security_group" "endpoint-sg" {
+
+  name = "endpoint-sg-${var.project-name}"
+  vpc_id = "${aws_vpc.vpc-main.id}"
+  revoke_rules_on_delete = true
+
+  tags {
+    Name = "endpoint-sg-${var.project-name}"
+    Category = "network"
+    Project = "${var.project-name}"
+    Description = "SG for the interface endpoints in the project ${var.project-name}"
+  }
+}
+
+resource "aws_security_group_rule" "endpoint-sg-inbound-traffic" {
+  security_group_id = "${aws_security_group.endpoint-sg.id}"
+  description = "Inbound HTTPS traffic"
+
+  type = "ingress"
+  from_port = 443
+  to_port = 443
+  protocol = "tcp"
+  cidr_blocks = ["${aws_vpc.vpc-main.cidr_block}"]
+}

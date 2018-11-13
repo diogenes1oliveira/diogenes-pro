@@ -13,7 +13,7 @@ data "aws_ami" "amazon-linux-ami" {
 
   filter {
     name = "name"
-    values = ["amzn-ami-hvm-*"]
+    values = ["amzn2-ami-hvm-*"]
   }
 
   filter {
@@ -46,7 +46,7 @@ resource "aws_security_group" "bastion-sg" {
   }
 }
 
-resource "aws_security_group_rule" "bastion-sg-ipv4" {
+resource "aws_security_group_rule" "bastion-sg-ingress" {
   security_group_id = "${aws_security_group.bastion-sg.id}"
   description = "Allow all SSH traffic (IPv4)"
 
@@ -55,6 +55,28 @@ resource "aws_security_group_rule" "bastion-sg-ipv4" {
   to_port = 22
   protocol = "tcp"
   cidr_blocks = ["0.0.0.0/0"]
+}
+
+resource "aws_security_group_rule" "bastion-sg-egress" {
+  security_group_id = "${aws_security_group.bastion-sg.id}"
+  description = "Allow all SSH traffic (IPv4)"
+
+  type = "egress"
+  from_port = 22
+  to_port = 22
+  protocol = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
+resource "aws_security_group_rule" "allow-ssh-from-bastion" {
+  security_group_id = "${aws_security_group.default-sg.id}"
+  description = "Allow SSH from the Bastion host"
+
+  type = "ingress"
+  from_port = 22
+  to_port = 22
+  protocol = "tcp"
+  source_security_group_id = "${aws_security_group.bastion-sg.id}"
 }
 
 resource "aws_instance" "bastion-hosts" {

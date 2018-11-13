@@ -37,3 +37,7 @@ output "bastion-sg" {
 output "bastion-ips" {
   value = ["${aws_instance.bastion-hosts.*.public_ip}"]
 }
+
+output "bastion-key-name" {
+  value = "${var.bastion-ssh-key != "" ? element(aws_key_pair.bastion-key.*.key_name, 0) : ""}"
+}
