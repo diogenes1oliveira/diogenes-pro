@@ -2,6 +2,10 @@ output "vpc-main" {
   value = "${aws_vpc.vpc-main.id}"
 }
 
+output "vpc-cidr-block" {
+  value = "${aws_vpc.vpc-main.cidr_block}"
+}
+
 output "public-subnets" {
   value = {
     ids = "${aws_subnet.public-subnets.*.id}"
