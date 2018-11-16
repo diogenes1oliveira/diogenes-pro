@@ -10,18 +10,10 @@ export const LogoIcon = styled.img`
   vertical-align: middle;
 `;
 
-export const LogoName = styled.span`
-  font-weight: bold;
-  color: white;
-  display: inline-block;
-  vertical-align: middle;
-`;
-
 export default styled(
   props => <Link {...props} to={'/'}>
     <LogoIcon src={logoSrc} alt='diógenes' title='Diógenes Oliveira' />
   </Link>
 )`
   font-size: 30px;
-  margin: 5px;
 `;

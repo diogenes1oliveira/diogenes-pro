@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { Media } from 'Components/Layout';
+
 export const NavLink = styled(Link)`
   border-bottom: solid 3px transparent;
   color: white;
-  margin-bottom: 3px;
   text-decoration: none;
   &:hover {
     border-color: white;
@@ -31,7 +32,5 @@ export default styled(
     </NavLink>
   </nav>
 )`
-  margin: 5px;
-  padding-bottom: 3px;
   text-align: right;
 `;

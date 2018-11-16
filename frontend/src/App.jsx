@@ -5,9 +5,15 @@ import { ThemeProvider } from 'styled-components';
 import theme, { BodyStyler } from './theme';
 
 import Header from './parts/Header';
+import Banner from './parts/Banner';
+import Expertises from './parts/Expertises';
 
 function Body(props) {
-  return <Header {...props} />;
+  return <div>
+    <Header />
+    <Banner />
+    <Expertises />
+  </div>
 }
 
 export default function App(props) {

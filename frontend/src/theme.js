@@ -5,9 +5,14 @@ import flumeBackground from './images/bg/flumes-in-switzerland-blurred.jpg';
 const theme = {
   bgColor: "#05060b",
   bgImage: flumeBackground,
-  primaryColor: "#102234",
-  secondaryColor: "#A7793C",
+  baseFont: 'monospace',
+  innerSpacing: '20px',
   overlayColor: "rgba(0, 0, 0, 0.5)",
+  primaryColor: "#fe6900",
+  secondaryColor: "#A7793C",
+  spacing: '20px',
+  textColor: 'white',
+  underlineSize: '3px',
 };
 
 export const BodyStyler = createGlobalStyle`

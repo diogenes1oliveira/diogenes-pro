@@ -1,32 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import Logo from 'Components/Logo';
 import NavBar from 'Components/NavBar';
+import { Row, Col } from 'Components/Layout';
 
-const StyledHeader = styled.header`
+import logoSrc from 'Images/icons/logo.png';
+
+const StyledRow = styled(Row)`
   background-color: ${({theme}) => theme.overlayColor};
-  font: 16px monospace;
+  font: 16px ${({theme}) => theme.baseFont};
+  margin: ${({theme}) => theme.spacing};
 
-  ${Logo} {
-    float: left;
-    width: 50%;
+  h1 {
+    font-size: 30px;
+    margin: 0;
+    img {
+      display: inline-block;
+      height: 1.2em;
+      vertical-align: middle;
+    }
   }
-
-  ${NavBar} {
-  }
-
-  &:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-
 `;
 
 export default function Header(props) {
-  return <StyledHeader>
-    <Logo />
-    <NavBar />
-  </StyledHeader>;
+  return <StyledRow>
+    <Col xs={6} verticalCenter={true}>
+      <h1>
+        <Link to='/'>
+          <img src={logoSrc} alt='diógenes' title='Diógenes Oliveira' />
+        </Link>
+      </h1>
+    </Col>
+    <Col xs={6} verticalCenter={true}>
+      <NavBar />
+    </Col>
+  </StyledRow>;
 }

@@ -24,11 +24,7 @@ export const Media = Object.keys(sizes).reduce((media, sizeLabel) => {
 }, {});
 
 export const Row = styled.div`
-  &::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+  display: flex;
 `;
 
 function getWidthString(span) {
@@ -36,9 +32,9 @@ function getWidthString(span) {
 }
 
 export const Col = styled.div`
-  float: left;
-
-  ${({xs}) => xs ? getWidthString(xs) : 'width: 100%;'}
+  align-self: ${({verticalCenter}) => verticalCenter ? 'center' : 'auto'};
+  padding: ${({theme}) => theme.innerSpacing};
+  width: ${({xs}) => xs ? getWidthString(xs) : '100%;'};
 
   ${({sm}) => sm ? Media.sm`
     width: ${getWidthString(sm)};
@@ -51,4 +47,9 @@ export const Col = styled.div`
   ${({lg}) => lg ? Media.lg`
     width: ${getWidthString(lg)};
   ` : ''}
+`;
+
+export const ClearFloat = styled.div`
+  clear: both;
+  display: table;
 `;
