@@ -9,7 +9,7 @@ const theme = {
   innerSpacing: '20px',
   overlayColor: "rgba(0, 0, 0, 0.5)",
   primaryColor: "#fe6900",
-  secondaryColor: "#A7793C",
+  secondaryColor: "#009f89",
   spacing: '20px',
   textColor: 'white',
   underlineSize: '3px',

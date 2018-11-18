@@ -23,6 +23,7 @@ const ExpertiseCol = styled(Col)`
   }
 
   a {
+    color: ${({theme}) => theme.secondaryColor};
     text-decoration: none;
   }
 
@@ -53,7 +54,7 @@ const StyledHeader = styled.h4`
 `;
 
 export default function Expertises(props) {
-  return <StyledSection>
+  return <StyledSection id="section-expertises">
     <Row>
       <ExpertiseCol sm={12}>
         <StyledHeader>
@@ -82,7 +83,7 @@ export default function Expertises(props) {
           <h5><span>Full Stack Development</span></h5>
         </Link>
         <p>
-          Implementing web-based applications from the design concept to the
+          Developing web-based applications from the design implementation to the
           creation of responsive interfaces, serving them through secure and modern
           backend technologies.
         </p>

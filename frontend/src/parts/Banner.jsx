@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Row, Col } from 'Components/Layout';
-import wordCloud from 'Images/tech/word-cloud.png';
 
 const StyledRow = styled(Row)`
   margin: ${({theme}) => theme.spacing};
@@ -23,13 +22,6 @@ const AboutMe = styled.section`
   }
 `;
 
-const ImgCloud = styled.section`
-  img {
-    display: block;
-    margin: auto;
-    max-height: 14em;visibility: hidden;
-  }
-`;
 
 export default function Banner() {
   return (
@@ -48,9 +40,6 @@ export default function Banner() {
         </AboutMe>
       </Col>
       <Col md={6}>
-        <ImgCloud>
-          <img src={wordCloud} />
-        </ImgCloud>
       </Col>
     </StyledRow>
   );

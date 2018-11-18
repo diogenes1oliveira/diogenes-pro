@@ -31,9 +31,13 @@ function getWidthString(span) {
   return span && `${span / 12 * 100}%`;
 }
 
-export const Col = styled.div`
-  align-self: ${({verticalCenter}) => verticalCenter ? 'center' : 'auto'};
+export const Col = styled.div.attrs({
+  alignSelf: ({verticalCenter}) => verticalCenter ? 'center' : 'auto',
+  textAlign: ({textAlign}) => textAlign || 'left',
+})`
+  align-self: ${props => props.alignSelf};
   padding: ${({theme}) => theme.innerSpacing};
+  text-align: ${props => props.textAlign};
   width: ${({xs}) => xs ? getWidthString(xs) : '100%;'};
 
   ${({sm}) => sm ? Media.sm`

@@ -7,12 +7,14 @@ import theme, { BodyStyler } from './theme';
 import Header from './parts/Header';
 import Banner from './parts/Banner';
 import Expertises from './parts/Expertises';
+import Footer from './parts/Footer';
 
 function Body(props) {
   return <div>
     <Header />
     <Banner />
     <Expertises />
+    <Footer />
   </div>
 }
 
