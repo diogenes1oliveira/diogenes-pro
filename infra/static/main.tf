@@ -2,8 +2,8 @@ provider "aws" {
   region = "${var.region}"
 }
 
-data "template_file" "bucket-policy" {
-  template = "${file("policy.json")}"
+data "template_file" "policy-main" {
+  template = "${file("${path.module}/policy-main.json")}"
 
   vars {
     domain = "${var.domain}"
@@ -12,7 +12,7 @@ data "template_file" "bucket-policy" {
 
 resource "aws_s3_bucket" "access-log" {
   bucket = "access-log-${var.domain}"
-  acl = "private"
+  acl = "log-delivery-write"
   region = "${var.region}"
 
   tags {
@@ -26,7 +26,7 @@ resource "aws_s3_bucket" "access-log" {
 resource "aws_s3_bucket" "static-files-bucket" {
   bucket = "${var.domain}"
   acl = "public-read"
-  policy = "${data.template_file.bucket-policy.rendered}"
+  policy = "${data.template_file.policy-main.rendered}"
   region = "${var.region}"
 
   versioning {

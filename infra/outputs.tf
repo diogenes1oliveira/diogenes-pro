@@ -9,3 +9,7 @@ output "private-subnets" {
 output "default-sg" {
   value = "${module.network.default-sg}"
 }
+
+output "static-endpoint" {
+  value = "${module.static.static-files-endpoint}"
+}
