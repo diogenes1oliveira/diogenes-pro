@@ -17,7 +17,8 @@ module "network" {
 
   project-name = "diogenes-pro"
   region = "us-east-2"
-  vpc-nats = 2
+  vpc-nats = 0
+  bastion-hosts = 0
 }
 
 
@@ -26,5 +27,5 @@ module "static" {
 
   project-name = "diogenes-pro"
   region = "us-east-2"
-  domain = "diogenes.pro"
+  domain = "static.diogenes.pro"
 }
