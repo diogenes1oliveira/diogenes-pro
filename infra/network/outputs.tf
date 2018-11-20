@@ -39,5 +39,5 @@ output "bastion-ips" {
 }
 
 output "bastion-key-name" {
-  value = "${var.bastion-ssh-key != "" ? element(aws_key_pair.bastion-key.*.key_name, 0) : ""}"
+  value = "${element(concat(aws_key_pair.bastion-key.*.key_name, list("")), 0)}"
 }
