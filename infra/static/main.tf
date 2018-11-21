@@ -11,9 +11,13 @@ data "template_file" "policy-main" {
 }
 
 resource "aws_s3_bucket" "access-log" {
-  bucket = "access-log-${var.domain}"
+  bucket_prefix = "tf-access-log-${var.domain}-"
   acl = "log-delivery-write"
   region = "${var.region}"
+
+  lifecycle {
+    create_before_destroy = true
+  }
 
   tags {
     Name = "Access-Log-${var.domain}"
@@ -24,10 +28,14 @@ resource "aws_s3_bucket" "access-log" {
 }
 
 resource "aws_s3_bucket" "static-files-bucket" {
-  bucket = "${var.domain}"
+  bucket_prefix = "tf-${var.domain}-"
   acl = "public-read"
   policy = "${data.template_file.policy-main.rendered}"
   region = "${var.region}"
+
+  lifecycle {
+    create_before_destroy = true
+  }
 
   versioning {
     enabled = true
