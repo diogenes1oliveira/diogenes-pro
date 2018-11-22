@@ -8,7 +8,7 @@ variable "ssm-services" {
   default = ["ssm", "ec2messages", "ec2", "ssmmessages"]
 }
 resource "aws_vpc_endpoint" "interface-endpoints" {
-  count = "${length(var.ssm-services)}"
+  count = "${var.create-ssm-endpoints ? length(var.ssm-services) : 0}"
 
   vpc_id = "${aws_vpc.vpc-main.id}"
   vpc_endpoint_type = "Interface"

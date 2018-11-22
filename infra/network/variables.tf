@@ -55,6 +55,11 @@ variable "bastion-ssh-key" {
   default = ""
 }
 
+variable "create-ssm-endpoints" {
+  description = "Create interface endpoints for SSM"
+  default = false
+}
+
 variable "allowed-vpc-inbound-icmp-traffic" {
   description = "Allowed inbound ICMP traffic in the VPC"
   default = [

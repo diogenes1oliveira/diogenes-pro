@@ -9,3 +9,7 @@ variable "project-name" {
 variable "domain" {
   type = "string"
 }
+
+variable "static-prefix" {
+  type = "string"
+}

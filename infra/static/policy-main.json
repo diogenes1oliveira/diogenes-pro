@@ -6,7 +6,7 @@
     "Principal": "*",
     "Action": ["s3:GetObject"],
     "Resource": [
-      "arn:aws:s3:::${domain}/*"
+      "arn:aws:s3:::${bucket}/*"
     ]
   }]
 }
