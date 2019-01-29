@@ -1,0 +1,108 @@
+{
+  "basics": {
+    "name": "Diógenes Oliveira",
+    "label": "",
+    "picture": "",
+    "email": "diogenes1oliveira@gmail.com",
+    "phone": "(55) 61 99388-6927",
+    "degree": "Master's Degree",
+    "website": "Your website URL",
+    "summary": "Full stack developer",
+    "location": {
+      "address": "Quadra 58, Lote 23 - Centro",
+      "postalCode": "72900308",
+      "city": "Santo Antônio do Descoberto",
+      "countryCode": "BR",
+      "region": "Goiás"
+    },
+    "profiles": [
+      {
+        "network": "A social media or other profile that you would like to include (e.g. LinkedIn, Twitter)",
+        "username": "Your username on this network",
+        "url": "A URL to your user profile page"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "RCS Tecnologia",
+      "position": "Developer",
+      "website": "rcstecnologia.com.br",
+      "startDate": "2018-02-26",
+      "endDate": "",
+      "summary": "Full Stack Developer and DevOps Engineer",
+      "highlights": [
+        "Reformulation of the backend: from a single-instance server to a highly available infrastructure in AWS",
+        "Implementation of a CI/CD pipeline, previously inexistent",
+        "Containerization of the company's management system",
+        ""
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Your volunteer organization name",
+      "position": "Your job title",
+      "website": "The URL for the employer's website",
+      "startDate": "Your start date, in YYYY-MM-DD format",
+      "endDate": "Your end date, in YYY-MM-DD format (leave blank for a current position)",
+      "summary": "A one-sentence to one-paragraph summary of this employer or position",
+      "highlights": [
+        "Bullet-point list items that you would like to include along with (or instead of) a summary paragraph."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Your school name",
+      "area": "Your area of study or degree earned",
+      "studyType": "",
+      "startDate": "Your start date, in YYYY-MM-DD format",
+      "endDate": "Your completion date, in YYYY-MM-DD format",
+      "gpa": "",
+      "courses": [
+        ""
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Your award title",
+      "date": "Your date, in YYYY-MM-DD format you received the award",
+      "awarder": "Your award given by",
+      "summary": "A one-sentence to one-paragraph overview of this award"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Your publication title",
+      "publisher": "Publisher name",
+      "releaseDate": "Publication date, in YYYY-MM-DD format",
+      "website": "The website URL for this publisher or book",
+      "summary": "A one-sentence to one-paragraph overview of this publication"
+    }
+  ],
+  "skills": [
+    {
+      "name": "A category of job skills (e.g. 'Programming Languages')",
+      "level": "",
+      "keywords": [
+        "Keywords under this category (e.g. 'Java', 'C++', etc)"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Language name",
+      "fluency": "Your language fluency"
+    }
+  ],
+  "interests": [
+    {
+      "name": "A category of interests (e.g. 'Sports')",
+      "keywords": [
+        "Keywords under this category (e.g. 'Cricket', 'Football', 'Golf')"
+      ]
+    }
+  ]
+}

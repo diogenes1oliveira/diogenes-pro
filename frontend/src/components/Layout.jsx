@@ -36,6 +36,7 @@ export const Col = styled.div.attrs({
   textAlign: ({textAlign}) => textAlign || 'left',
 })`
   align-self: ${props => props.alignSelf};
+  margin: 0;
   padding: ${({theme}) => theme.innerSpacing};
   text-align: ${props => props.textAlign};
   width: ${({xs}) => xs ? getWidthString(xs) : '100%;'};
@@ -51,9 +52,4 @@ export const Col = styled.div.attrs({
   ${({lg}) => lg ? Media.lg`
     width: ${getWidthString(lg)};
   ` : ''}
-`;
-
-export const ClearFloat = styled.div`
-  clear: both;
-  display: table;
 `;

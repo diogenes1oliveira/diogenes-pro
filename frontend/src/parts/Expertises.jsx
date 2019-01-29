@@ -3,19 +3,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { Row, Col } from 'Components/Layout';
+import { StyledSection, StyledHeader } from 'Components/Sections';
 
 import dataMining from 'Images/tech/data-mining.png';
 import programming from 'Images/tech/programming.svg';
 import cloud from 'Images/tech/cloud-computing.svg'; // https://www.svgrepo.com/svg/278286/cloud-computing-share
 
-const StyledSection = styled.section`
-  background: ${({theme}) => theme.overlayColor};
-  margin: 0 ${({theme}) => theme.spacing};
-  padding-bottom: ${({theme}) => theme.spacing};
-`;
-
 const ExpertiseCol = styled(Col)`
-  font-family: ${({theme}) => theme.baseFont};
   text-align: center;
 
   &:not(:last-child) {
@@ -45,12 +39,6 @@ const ExpertiseCol = styled(Col)`
   p {
     color: ${({theme}) => theme.textColor};
   }
-`;
-
-const StyledHeader = styled.h4`
-  color: ${({theme}) => theme.textColor};
-  font-size: 1.6em;
-  margin: ${({theme}) => theme.innerSpacing};
 `;
 
 export default function Expertises(props) {

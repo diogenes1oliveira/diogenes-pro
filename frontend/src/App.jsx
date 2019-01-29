@@ -7,6 +7,7 @@ import theme, { BodyStyler } from './theme';
 import Header from './parts/Header';
 import Banner from './parts/Banner';
 import Expertises from './parts/Expertises';
+import Projects from './parts/Projects';
 import Footer from './parts/Footer';
 
 function Body(props) {
@@ -14,6 +15,7 @@ function Body(props) {
     <Header />
     <Banner />
     <Expertises />
+    <Projects />
     <Footer />
   </div>
 }
