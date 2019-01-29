@@ -41,3 +41,7 @@ output "bastion-ips" {
 output "bastion-key-name" {
   value = "${element(concat(aws_key_pair.bastion-key.*.key_name, list("")), 0)}"
 }
+
+output "private-zone-id" {
+  value = "${element(concat(aws_route53_zone.vpc-private-zone.*.id, list("")), 0)}"
+}

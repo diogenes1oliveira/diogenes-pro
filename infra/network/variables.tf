@@ -60,6 +60,11 @@ variable "create-ssm-endpoints" {
   default = false
 }
 
+variable "create-private-zone" {
+  description = "Enable the creation of a privated hosted zone associated to this VPC"
+  default = false
+}
+
 variable "allowed-vpc-inbound-icmp-traffic" {
   description = "Allowed inbound ICMP traffic in the VPC"
   default = [

@@ -12,15 +12,15 @@ provider "aws" {
   region = "${var.region}"
 }
 
-module "network" {
-  source = "./network"
+# module "network" {
+#   source = "./network"
 
-  project-name = "diogenes-pro"
-  region = "${var.region}"
-  vpc-nats = 0
-  bastion-hosts = 0
-  create-ssm-endpoints = false
-}
+#   project-name = "diogenes-pro"
+#   region = "${var.region}"
+#   vpc-nats = 0
+#   bastion-hosts = 0
+#   create-ssm-endpoints = false
+# }
 
 
 module "static" {

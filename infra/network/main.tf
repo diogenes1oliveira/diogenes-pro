@@ -30,3 +30,13 @@ resource "aws_internet_gateway" "vpc-main-ig" {
 resource "aws_egress_only_internet_gateway" "vpc-main-egress-only-ig" {
   vpc_id = "${aws_vpc.vpc-main.id}"
 }
+
+resource "aws_route53_zone" "vpc-private-zone" {
+  count = "${var.create-private-zone ? 1 : 0}"
+  name = "example.com"
+
+  vpc {
+    vpc_id = "${aws_vpc.vpc-main.id}"
+  }
+
+}
